@@ -1,0 +1,1976 @@
+
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanskritiSetu - India's Ancient Code for Modern Well-being</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #404040;
+            --bg-secondary: #333333;
+            --bg-card: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --accent-teal: #24E6FF;
+            --accent-purple: #8B3AB4;
+            --accent-orange: #FCAB45;
+            --gradient-gold: #FFD700;
+            --gradient-orange: #FF6B35;
+            --gradient-pink: #FF006E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            
+        }
+
+        body {
+            padding-top: 100px;
+            background: #404040;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Loading Screen - EXACT MATCH TO DESIGN */
+        #loading-screen {
+            position: fixed;
+            inset: 0;
+            background: #3a3a3a;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease;
+        }
+
+        .om-symbol {
+            font-size: 8rem;
+            color: #00d9ff;
+            text-shadow: 
+                0 0 20px #00d9ff,
+                0 0 40px #00d9ff,
+                0 0 60px #00d9ff,
+                0 0 80px #00d9ff;
+            animation: spinOm 2s linear infinite;
+        }
+
+        @keyframes spinOm {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            color: #b0b0b0;
+            margin-top: 30px;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        /* Header - VISIBLE AND ANIMATED */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: #222;
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+            opacity: 0;
+            transform: translateY(-100%);
+            animation: headerSlide 1s ease 2.8s forwards;
+        }
+
+        @keyframes headerSlide {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+        .logo-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            background:#00d9ff;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        
+        
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #FFD700;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 100px;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .section.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h1, .section h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, var(--gradient-gold), var(--gradient-orange), var(--gradient-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem 0;
+            color: var(--accent-teal);
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(36, 230, 255, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        /* Did You Know Cards */
+        .did-you-know {
+            background: linear-gradient(135deg, rgba(36, 230, 255, 0.1), rgba(139, 58, 180, 0.1));
+            border: 1px solid rgba(36, 230, 255, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .did-you-know::before {
+            content: '💡';
+            font-size: 2rem;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--bg-primary);
+            padding: 0 10px;
+        }
+
+        /* Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(45deg, var(--accent-teal), var(--accent-purple));
+            color: var(--text-primary);
+            padding: 1rem;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(36, 230, 255, 0.2);
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: var(--bg-card);
+        }
+
+        .comparison-table tr:nth-child(odd) {
+            background: var(--bg-secondary);
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(36, 230, 255, 0.1);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+
+        /* Lists */
+        .custom-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .custom-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .custom-list li::before {
+            content: '🔸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(42, 42, 42, 0.8), rgba(51, 51, 51, 0.8));
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(36, 230, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(36, 230, 255, 0.3);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 20px rgba(36, 230, 255, 0.3);
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:focus + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            transform: translateY(-2rem) scale(0.8);
+            color: var(--accent-teal);
+        }
+
+        .btn-submit {
+            background: linear-gradient(45deg, var(--accent-teal), var(--accent-purple));
+            color: var(--text-primary);
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(36, 230, 255, 0.4);
+        }
+
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(36, 230, 255, 0.1), rgba(139, 58, 180, 0.1));
+            border-radius: 20px;
+            border: 2px solid var(--accent-teal);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+            padding: 4rem 2rem 2rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(36, 230, 255, 0.3);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-teal);
+            margin-bottom: 1rem;
+        }
+
+        
+        
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(36, 230, 255, 0.2);
+            color: var(--text-secondary);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--accent-teal), var(--accent-purple));
+            border: none;
+            border-radius: 50%;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(36, 230, 255, 0.6);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .site-title {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section h1, .section h2 {
+                font-size: 2rem;
+            }
+
+            .image-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .om-symbol {
+                font-size: 5rem;
+            }
+
+            .loading-text {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: var(--text-primary);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Particle Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent-teal);
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        /* Quiz Styles - FIXED WORKING VERSION */
+        .quiz-section {
+            padding: 60px 20px;
+            background: #404040;
+            min-height: 100vh;
+        }
+
+        .quiz-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .quiz-title {
+            text-align: center;
+            font-size: 3rem;
+            background: linear-gradient(90deg, #FFD700, #FF6B35, #FF006E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .quiz-subtitle {
+            text-align: center;
+            color: #ccc;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .quiz-progress {
+            margin-bottom: 40px;
+        }
+
+        .counter-text {
+            text-align: center;
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar-bg {
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 16.67%;
+            background: linear-gradient(90deg, #FFD700, #FF6B35);
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+
+        .question-card {
+            display: none;
+            background: #2a2a2a;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .question-card.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .topic-tag {
+            display: inline-block;
+            background: linear-gradient(90deg, #FFD700, #FF6B35);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            color: #fff;
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .answers {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .answer-option {
+            background: #333;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.2);
+            padding: 18px 25px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .answer-option:hover:not(:disabled) {
+            background: #3a3a3a;
+            border-color: rgba(255,255,255,0.4);
+            transform: translateX(10px);
+        }
+
+        .answer-option:disabled {
+            cursor: not-allowed;
+        }
+
+        .answer-option.correct {
+            background: #4ade80 !important;
+            border-color: #4ade80 !important;
+            color: #000 !important;
+            font-weight: bold;
+        }
+
+        .answer-option.incorrect {
+            background: #ef4444 !important;
+            border-color: #ef4444 !important;
+            color: #fff !important;
+        }
+
+        .feedback {
+            display: none;
+            background: rgba(255,215,0,0.1);
+            border-left: 4px solid #FFD700;
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff;
+            margin-top: 20px;
+            animation: slideDown 0.4s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; max-height: 0; }
+            to { opacity: 1; max-height: 200px; }
+        }
+
+        .next-button {
+            display: none;
+            margin: 30px auto 0;
+            padding: 18px 45px;
+            background: linear-gradient(90deg, #FFD700, #FF6B35);
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .next-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255,215,0,0.5);
+        }
+
+        .results-screen {
+            text-align: center;
+            background: #2a2a2a;
+            padding: 60px 40px;
+            border-radius: 20px;
+        }
+
+        .results-screen h2 {
+            color: #FFD700;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .score-text {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .score-text span {
+            color: #4ade80;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .performance-msg {
+            color: #ccc;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+        }
+
+        .retry-button {
+            padding: 15px 40px;
+            background: linear-gradient(90deg, #FFD700, #FF6B35);
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .retry-button:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .quiz-title { font-size: 2rem; }
+            .question { font-size: 1.3rem; }
+            .answer-option { font-size: 1rem; padding: 15px 20px; }
+        }
+    </style>
+<style>
+            @keyframes confetti-fall {
+                to {
+                    transform: translateY(100vh) rotate(720deg);
+                }
+            }
+            
+            @keyframes quiz-correct {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(74, 222, 128, 0.6); }
+            }
+            
+            @keyframes quiz-incorrect {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+            
+            @keyframes draw-line {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+            
+            @keyframes bar-grow {
+                from {
+                    height: 0;
+                }
+            }
+        </style><link type="text/css" rel="stylesheet" href="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/css/mcafee_fonts.css"></head>
+<body>
+    <!-- Loading Screen -->
+<div id="loading-screen" style="opacity: 100;">
+
+        <div class="om-symbol">ॐ</div>
+        <div class="loading-text">SanskritiSetu</div>
+    </div>
+
+    <!-- Particle Background -->
+    <div class="particles" id="particles"><div class="particle" style="left: 43.7543%; top: 13.4727%; animation-delay: 0.355602s;"></div><div class="particle" style="left: 59.4514%; top: 84.7091%; animation-delay: 0.594131s;"></div><div class="particle" style="left: 16.6074%; top: 15.9528%; animation-delay: 1.26509s;"></div><div class="particle" style="left: 69.9296%; top: 61.7158%; animation-delay: 2.0719s;"></div><div class="particle" style="left: 45.024%; top: 29.6218%; animation-delay: 0.340905s;"></div><div class="particle" style="left: 58.8837%; top: 94.8656%; animation-delay: 2.01277s;"></div><div class="particle" style="left: 69.6088%; top: 32.3589%; animation-delay: 0.0500632s;"></div><div class="particle" style="left: 51.3501%; top: 0.762731%; animation-delay: 1.95216s;"></div><div class="particle" style="left: 6.56842%; top: 34.2831%; animation-delay: 0.706178s;"></div><div class="particle" style="left: 72.4162%; top: 65.3274%; animation-delay: 0.94562s;"></div><div class="particle" style="left: 95.8096%; top: 10.9972%; animation-delay: 1.90649s;"></div><div class="particle" style="left: 34.0162%; top: 31.9803%; animation-delay: 2.20822s;"></div><div class="particle" style="left: 35.7215%; top: 73.1254%; animation-delay: 2.96178s;"></div><div class="particle" style="left: 62.9183%; top: 56.0467%; animation-delay: 2.25434s;"></div><div class="particle" style="left: 25.6588%; top: 21.4907%; animation-delay: 1.21989s;"></div><div class="particle" style="left: 66.0635%; top: 14.1271%; animation-delay: 0.664118s;"></div><div class="particle" style="left: 85.4688%; top: 12.6443%; animation-delay: 1.41128s;"></div><div class="particle" style="left: 35.6342%; top: 6.34777%; animation-delay: 2.16645s;"></div><div class="particle" style="left: 59.0955%; top: 64.5017%; animation-delay: 0.457578s;"></div><div class="particle" style="left: 64.4873%; top: 36.3284%; animation-delay: 0.358771s;"></div><div class="particle" style="left: 79.1077%; top: 93.855%; animation-delay: 1.15455s;"></div><div class="particle" style="left: 46.51%; top: 18.3508%; animation-delay: 0.679844s;"></div><div class="particle" style="left: 39.1653%; top: 40.28%; animation-delay: 2.4954s;"></div><div class="particle" style="left: 27.4687%; top: 7.45903%; animation-delay: 0.284369s;"></div><div class="particle" style="left: 9.72955%; top: 47.1945%; animation-delay: 0.0922706s;"></div><div class="particle" style="left: 46.9596%; top: 89.7406%; animation-delay: 0.693009s;"></div><div class="particle" style="left: 16.6954%; top: 63.6238%; animation-delay: 0.816722s;"></div><div class="particle" style="left: 77.4474%; top: 17.0695%; animation-delay: 1.33209s;"></div><div class="particle" style="left: 26.9872%; top: 60.7258%; animation-delay: 2.30687s;"></div><div class="particle" style="left: 84.4422%; top: 61.1643%; animation-delay: 1.92152s;"></div><div class="particle" style="left: 83.8008%; top: 49.082%; animation-delay: 2.86135s;"></div><div class="particle" style="left: 7.36428%; top: 82.009%; animation-delay: 0.50945s;"></div><div class="particle" style="left: 78.6535%; top: 65.6767%; animation-delay: 0.741826s;"></div><div class="particle" style="left: 87.788%; top: 67.1655%; animation-delay: 2.60608s;"></div><div class="particle" style="left: 22.8742%; top: 70.4183%; animation-delay: 0.87721s;"></div><div class="particle" style="left: 69.5164%; top: 95.1775%; animation-delay: 0.733748s;"></div><div class="particle" style="left: 14.3445%; top: 18.5652%; animation-delay: 0.61387s;"></div><div class="particle" style="left: 73.4488%; top: 31.0095%; animation-delay: 1.67426s;"></div><div class="particle" style="left: 27.3713%; top: 55.8191%; animation-delay: 0.386284s;"></div><div class="particle" style="left: 28.5202%; top: 52.1211%; animation-delay: 0.915431s;"></div><div class="particle" style="left: 77.6515%; top: 85.4446%; animation-delay: 2.21314s;"></div><div class="particle" style="left: 46.4982%; top: 38.7182%; animation-delay: 2.93073s;"></div><div class="particle" style="left: 41.9667%; top: 68.4913%; animation-delay: 1.36148s;"></div><div class="particle" style="left: 80.8058%; top: 6.1256%; animation-delay: 1.83609s;"></div><div class="particle" style="left: 33.8789%; top: 56.827%; animation-delay: 1.37406s;"></div><div class="particle" style="left: 87.866%; top: 32.0317%; animation-delay: 0.400558s;"></div><div class="particle" style="left: 96.2263%; top: 10.942%; animation-delay: 2.80456s;"></div><div class="particle" style="left: 43.9957%; top: 2.13741%; animation-delay: 2.37705s;"></div><div class="particle" style="left: 58.1509%; top: 1.16957%; animation-delay: 2.24024s;"></div><div class="particle" style="left: 41.3293%; top: 72.613%; animation-delay: 0.211708s;"></div></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="https://cdn.corenexis.com/files/b/7939613168.png" alt="Logo">
+            <div class="logo-text">
+                SanskritiSetu
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="file:///C:/Users/diiya/OneDrive/Desktop/MAIN%20PROJECT/index.html#intro">Home</a></li>
+                <li><a href="file:///C:/Users/diiya/OneDrive/Desktop/MAIN%20PROJECT/index.html#ayurveda">Ayurveda</a></li>
+                <li><a href="file:///C:/Users/diiya/OneDrive/Desktop/MAIN%20PROJECT/index.html#architecture">Architecture</a></li>
+                <li><a href="file:///C:/Users/diiya/OneDrive/Desktop/MAIN%20PROJECT/index.html#literature">Literature</a></li>
+                <li><a href="file:///C:/Users/diiya/OneDrive/Desktop/MAIN%20PROJECT/index.html#astronomy">Astronomy</a></li>
+                <li><a href="file:///C:/Users/diiya/OneDrive/Desktop/MAIN%20PROJECT/index.html#music">Music</a></li>
+                <li><a href="file:///C:/Users/diiya/OneDrive/Desktop/MAIN%20PROJECT/index.html#dance">Dance</a></li>
+                <li><a href="file:///C:/Users/diiya/OneDrive/Desktop/MAIN%20PROJECT/index.html#quiz">Quiz</a></li>
+                <li><a href="file:///C:/Users/diiya/OneDrive/Desktop/MAIN%20PROJECT/index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Introduction Section -->
+        <section id="intro" class="section animate">
+            <h1>Welcome to SanskritiSetu</h1>
+            <h2>SWADESHI - India's Timeless Wisdom for Modern World</h2>
+            
+            <h3>INTRODUCTION</h3>
+            <p>From the dawn of Indian civilization, wisdom blossomed in many streams: Ayurveda, Architecture, Literature, Astronomy, Music, and Dance—each enriching the mind, body, culture, and cosmos for generations. Ayurveda, the ancient science of life, originated in the Indus Valley and Vedic era, nurturing health and holistic healing. Indian architecture evolved alongside, guided by cosmic principles and Vastu Shastra to create sacred and harmonious spaces. Meanwhile, timeless literature from the Vedas to epics built the foundation of Indian thought, ethics, and storytelling. Astronomy flourished with precise calculations of planets and eclipses, shaping calendars and festivals. Music and dance, expressed through ragas, classical styles, and spiritual rhythms, healed souls and celebrated life's rhythms.</p>
+            
+            <p>Through centuries, these sciences and arts expanded, blending innovation with tradition. Despite colonial interruptions, India revived its rich heritage after 1947. Today, Ayurveda's healing wisdom, sustainable architecture, vibrant literature, cutting-edge astronomical research, and legendary music and dance inspire a global renaissance of India's timeless knowledge. From ancient manuscripts and temple carvings to digital innovations and global stages, this heritage continues to light the path to harmony, creativity, and cultural excellence.</p>
+            
+            <div class="did-you-know">
+                <h3>Did You Know?</h3>
+                <p>The word "Sanskruti" means culture and refinement, while "Setu" means bridge. Together, SanskritiSetu represents our mission to bridge ancient Indian wisdom with modern applications for a better tomorrow. The Swadeshi movement emphasized self-reliance and indigenous culture - values deeply embedded in India's ancient knowledge systems.</p>
+            </div>
+        </section>
+
+        <!-- Ayurveda Section -->
+        <section id="ayurveda" class="section">
+            <h2>Ayurveda - An Ancient Holistic Medical System</h2>
+            <p>Ayurveda, meaning the "Science of Life," originated over 5,000 years ago in the Indus Valley and Vedic period (around 3000 BCE). It is a traditional Indian medical system emphasizing personalized and holistic treatment tailored to an individual's constitution (Prakriti). Ayurveda focuses on balancing the three doshas—Vata, Pitta, and Kapha—which govern bodily functions, alongside diet, lifestyle, herbal remedies, and therapies to maintain health and prevent illness.</p>
+            
+            <p>Foundational texts like the Charaka Samhita and Sushruta Samhita (6th century BCE onwards) thoroughly describe internal medicine, surgery, diagnostics, and herbal pharmacology. A unique feature of Ayurveda is its diagnostic techniques such as Nadi Pariksha (pulse examination), which detects subtle imbalances early by analyzing the pulse's rate, rhythm, volume, and amplitude.</p>
+            
+           <div class="image-gallery">
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/1200x/6f/fb/ca/6ffbcaa89130a58b43c5e9b65b112a54.jpg')">
+    <img src="https://i.pinimg.com/1200x/6f/fb/ca/6ffbcaa89130a58b43c5e9b65b112a54.jpg" alt="Ayurvedic preparation">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/1200x/9f/f0/e8/9ff0e8768c1477df8e39f70345c88984.jpg')">
+    <img src="https://i.pinimg.com/1200x/9f/f0/e8/9ff0e8768c1477df8e39f70345c88984.jpg" alt="Ayurvedic herbs and medicines">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/1200x/f6/48/7d/f6487dd0e1157e64a281e645280f4a58.jpg')">
+    <img src="https://i.pinimg.com/1200x/f6/48/7d/f6487dd0e1157e64a281e645280f4a58.jpg" alt="Ayurvedic consultation">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/1200x/7d/92/4c/7d924cc4489932afa59b881fc9f2a523.jpg')">
+    <img src="https://i.pinimg.com/1200x/7d/92/4c/7d924cc4489932afa59b881fc9f2a523.jpg" alt="Traditional Ayurvedic treatment">
+  </div>
+</div>
+
+
+            <h3>The Three Doshas</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Dosha</th>
+                        <th>Element</th>
+                        <th>Characteristics</th>
+                        <th>Imbalance Symptoms</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Vata</strong></td>
+                        <td>Air/Space</td>
+                        <td>Movement, creativity, energy</td>
+                        <td>Anxiety, dry skin, constipation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pitta</strong></td>
+                        <td>Fire/Water</td>
+                        <td>Metabolism, intelligence, digestion</td>
+                        <td>Inflammation, anger, acidity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kapha</strong></td>
+                        <td>Earth/Water</td>
+                        <td>Structure, stability, immunity</td>
+                        <td>Weight gain, congestion, lethargy</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Modern Applications and AI Integration</h3>
+            <p>In the 21st century, Ayurveda has embraced technology and artificial intelligence (AI) to enhance its diagnostic and treatment capabilities. AI-powered systems use machine learning and neural networks to analyze extensive patient data, improving precision in identifying dosha imbalances and tailoring highly individualized treatments. These technologies support practitioners in developing personalized health profiles, optimizing herbal formulations, and expanding remote health services through telemedicine.</p>
+            
+            <p>One advanced technological tool is the AI-powered pulse diagnostic device "Nadi Tarangini," which integrates sensitive sensors and algorithms to mimic traditional pulse reading, assessing 22 Ayurvedic parameters like dosha balance and stress levels with greater consistency and accuracy than manual diagnosis. AI also accelerates Ayurvedic drug discovery, speeding up the identification of effective herbal compounds by up to 30%, and boosts treatment efficacy by 25% by considering holistic patient factors beyond symptoms.</p>
+            
+            <p>Natural Language Processing (NLP) algorithms are being used to digitize and extract invaluable knowledge from classical Ayurvedic texts, reducing research time by 40% and facilitating integration with modern medicine. These advancements contribute to making Ayurveda more accessible, credible, and evidence-based while preserving its holistic essence.</p>
+
+            <div class="did-you-know">
+                <h3>Modern Integration</h3>
+                <p>This overview shows Ayurveda as a timeless medical system evolving with digital innovation to serve modern healthcare needs with personalized, holistic healing rooted in ancient wisdom. The AI-powered Nadi Tarangini device can assess 22 Ayurvedic parameters with greater accuracy than traditional pulse diagnosis!</p>
+            </div>
+
+            <h3>Key Principles</h3>
+            <ul class="custom-list">
+                <li>Prevention is better than cure - focus on maintaining health rather than just treating disease</li>
+                <li>Individual constitution (Prakriti) determines the best lifestyle and treatment approach</li>
+                <li>Mind, body, and spirit are interconnected and must be treated holistically</li>
+                <li>Natural remedies work in harmony with the body's healing processes</li>
+                <li>Seasonal and daily routines (Dinacharya &amp; Ritucharya) maintain optimal health</li>
+            </ul>
+        </section>
+
+        <!-- Architecture Section -->
+        <section id="architecture" class="section">
+            <h2>Architecture - The Timeless Treasure of India</h2>
+            <p>Ancient Indian architecture is deeply rooted in principles like Vastu Shastra, which harmonizes living spaces with cosmic order, natural elements, and directional influences, to ensure balanced energy flow. These ancient design concepts remain super relevant today as they inspire modern sustainable practices such as green buildings, eco-friendly urban planning, and smart homes that integrate traditional energy flow wisdom with contemporary technology. Ancient Indian architectural techniques focusing on natural materials, celestial alignment, and spatial harmony are increasingly valued for their environmental and spiritual benefits, influencing both cultural identity and modern design worldwide.</p>
+            
+           <div class="image-gallery">
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/736x/a4/e9/0e/a4e90e348231367b320e2ddc21b0142a.jpg')">
+    <img src="https://i.pinimg.com/736x/a4/e9/0e/a4e90e348231367b320e2ddc21b0142a.jpg" alt="Ancient Indian temple architecture">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/1200x/c1/ad/af/c1adafdbb57e6f64be9e14b7c3b36e5f.jpg')">
+    <img src="https://i.pinimg.com/1200x/c1/ad/af/c1adafdbb57e6f64be9e14b7c3b36e5f.jpg" alt="Intricate temple carvings">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/1200x/8f/68/50/8f685074a2f22558e91614e9b2c3c9ff.jpg')">
+    <img src="https://i.pinimg.com/1200x/8f/68/50/8f685074a2f22558e91614e9b2c3c9ff.jpg" alt="Traditional Indian palace">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/1200x/e5/f8/38/e5f838a0e66a67260ff00a504e2f3b6c.jpg')">
+    <img src="https://i.pinimg.com/1200x/e5/f8/38/e5f838a0e66a67260ff00a504e2f3b6c.jpg" alt="Ancient architectural marvel">
+  </div>
+</div>
+
+
+            <h3>Shocking and Fascinating Facts of Indian Architecture</h3>
+            
+            <p><strong>Kedarnath Temple's Shivling</strong> is uniquely triangular, unlike the common oval or circular shape, and its size is mysteriously shrinking, which some believe signals the end of Kaliyuga. Despite the devastating 2013 flood that destroyed everything around, the temple remained intact, almost miraculously strong.</p>
+            
+            <p><strong>The Jagannath Temple's flag</strong> flies against the wind's direction—a phenomenon defying nature's laws. Every day, a priest climbs the height of a 45-story building with bare hands to replace the flag, a ritual critical to the temple staying open; skipping it means closure for 18 years.</p>
+            
+            <p><strong>At Tirupati Balaji Temple,</strong> the stone idol of Lord Balaji shows no damage despite constant exposure to camphor, which typically causes stone to crack. The back of the idol also remains mysteriously moist, baffling priests.</p>
+            
+            <p><strong>Ajanta Caves</strong> were rediscovered accidentally in 1819 during a tiger hunt, having been abandoned and hidden by dense forests for centuries. The vibrant murals there were made using natural mineral pigments that have remarkably retained their color for over a millennium.</p>
+            
+            <p><strong>Ellora Caves</strong> feature the Kailash Temple, carved entirely downwards from a single rock, a feat unmatched in modern architecture. The site represents Hindu, Buddhist, and Jain religious harmony with 34 caves in total, built between the 5th and 12th centuries.</p>
+            
+            <p><strong>Hawa Mahal in Jaipur</strong> is designed like a crown and has 953 small windows that create natural ventilation, keeping the palace cool without modern cooling systems. It has no front entrance—entry is from the City Palace side—and no stairs; instead, ramps connect its five floors.</p>
+            
+            <p><strong>The Iron Pillar of Delhi</strong> is a 7.2-meter tall metal pillar made during the reign of Chandragupta II around 400 CE. It weighs over six tons and is famous for its remarkable resistance to rust, despite being exposed to the elements for more than 1600 years. This rust resistance is due to its unique iron composition with high phosphorus content, which creates a protective layer on the surface. The pillar is believed to have been originally erected near the Udayagiri Caves and later moved to its current location in the Qutb complex, Delhi. It is an outstanding example of ancient Indian metallurgical skill and scientific understanding.</p>
+
+            <div class="did-you-know">
+                <h3>Architectural Marvels</h3>
+                <p>These architectural wonders reflect a complex blend of spiritual symbolism, environmental harmony, advanced engineering, and cultural values that continue to inspire and serve practical uses in contemporary architecture. The Iron Pillar of Delhi remains rust-free after 1,600 years!</p>
+            </div>
+
+            <h3>Fascinating Architectural Facts</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Monument</th>
+                        <th>Unique Feature</th>
+                        <th>Engineering Marvel</th>
+                        <th>Modern Relevance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Kedarnath Temple</strong></td>
+                        <td>Triangular Shivling, mysteriously shrinking</td>
+                        <td>Survived 2013 floods intact</td>
+                        <td>Disaster-resistant construction</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jagannath Temple</strong></td>
+                        <td>Flag flies against wind direction</td>
+                        <td>45-story height daily climb ritual</td>
+                        <td>Structural engineering excellence</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kailash Temple, Ellora</strong></td>
+                        <td>Carved downwards from single rock</td>
+                        <td>Represents three religions harmoniously</td>
+                        <td>Unmatched rock-cutting techniques</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Iron Pillar, Delhi</strong></td>
+                        <td>1600+ years without rust</td>
+                        <td>High phosphorus composition</td>
+                        <td>Advanced metallurgical science</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hawa Mahal</strong></td>
+                        <td>953 windows, no front entrance</td>
+                        <td>Natural air conditioning system</td>
+                        <td>Sustainable cooling principles</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Literature Section -->
+        <section id="literature" class="section">
+            <h2>Ancient Indian Literature and Its Timeless Relevance</h2>
+            <p>Ancient Indian literature is a true embodiment of the Swadeshi spirit — rooted deeply in indigenous culture, philosophy, and self-reliance. From the Vedas and Upanishads to epics like the Ramayana and Mahabharata, these texts were created by Indian sages, reflecting timeless values such as truth, duty (dharma), righteousness, and devotion. Seen through the lens of the Swadeshi movement, these works celebrate India's intellectual independence and cultural pride.</p>
+            
+           <div class="image-gallery">
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/736x/00/99/5e/00995ec41fe678c9392068144967e6d0.jpg')">
+    <img src="https://i.pinimg.com/736x/00/99/5e/00995ec41fe678c9392068144967e6d0.jpg" alt="Ancient Sanskrit manuscripts">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/736x/d1/b0/a7/d1b0a7d79ec3273f41bb5441c875b37b.jpg')">
+    <img src="https://i.pinimg.com/736x/d1/b0/a7/d1b0a7d79ec3273f41bb5441c875b37b.jpg" alt="Traditional Indian literature">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/736x/eb/ca/f3/ebcaf3bdeb856bdbd309c7fe57d0185a.jpg')">
+    <img src="https://i.pinimg.com/736x/eb/ca/f3/ebcaf3bdeb856bdbd309c7fe57d0185a.jpg" alt="Ancient literary treasures">
+  </div>
+</div>
+
+
+            <h3>Key Features of Major Ancient Texts</h3>
+            
+            <h4>Vedas</h4>
+            <p>The oldest sacred scriptures, composed around 1500–1200 BCE, containing hymns, rituals, and philosophical concepts. The Rigveda's Nasadiya Sukta questions the origin of the universe, showcasing early scientific and philosophical inquiry. The Vedas establish foundational spiritual and social order, and their hymns address natural forces and gods symbolizing cosmic principles.</p>
+            
+            <h4>Upanishads</h4>
+            <p>Philosophical treatises that mark a move from ritualistic Vedic practices to introspection and metaphysics. Concepts like Brahman (ultimate reality) and Atman (individual soul) were elaborated here. They introduce ideas like karma and reincarnation, emphasizing self-realization and spiritual liberation (moksha).</p>
+            
+            <h4>Ramayana &amp; Mahabharata</h4>
+            <p>Epic narratives that blend history, mythology, and moral philosophy. The Ramayana illustrates ideal conduct through Lord Rama's life — emphasizing dharma and devotion. The Mahabharata contains the Bhagavad Gita, a spiritual dialogue with lessons on duty, righteousness, and inner resolve faced on the battlefield, offering guidance for ethical dilemmas, not just war.</p>
+            
+            <h4>Arthashastra</h4>
+            <p>Attributed to Chanakya (Kautilya), this ancient treatise on statecraft, politics, and economics highlights governance, law, diplomacy, and military strategy. Its systematic approach to administration, anti-corruption, and diplomacy remains a model for leadership and governance today.</p>
+            
+            <h3>Shocking Facts to Reflect Upon</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Text</th>
+                        <th>Shocking Fact</th>
+                        <th>Modern Relevance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Rigveda's Nasadiya Sukta</strong></td>
+                        <td>Philosophizes about creation's mystery, doubting if even the gods know origins</td>
+                        <td>Profoundly scientific mindset thousands of years ago</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bhagavad Gita</strong></td>
+                        <td>Battlefield teaching on detachment and performing one's duty without attachment</td>
+                        <td>Spiritual guide for warriors and ethical decision-makers alike</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Arthashastra</strong></td>
+                        <td>Predates Machiavelli's The Prince by nearly 1500 years</td>
+                        <td>Complex ideas like espionage, state secrets, and welfare economics</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ramayana</strong></td>
+                        <td>Rama considered epitome of ideal kingship, sonship, and husbandry</td>
+                        <td>Influencing social and cultural norms for generations</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mahabharata</strong></td>
+                        <td>One of the longest epic poems ever written, with over 100,000 verses</td>
+                        <td>Blending history, ethics, and metaphysics</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Why Is This Knowledge Still a Masterpiece Today?</h3>
+            
+            <h4>Arthashastra: Governance and Statecraft</h4>
+            <p>Despite originating in a monarchical era, Arthashastra offers pragmatic governance insights still relevant in modern democracies: Its emphasis on checks and balances to curb corruption and protect citizens is foundational in any fair government. Administrative details, from hierarchy to taxation and justice, form the basis for modern public administration. Concepts like strategic diplomacy, intelligence gathering, and economic planning anticipate modern political science and global relations. Today's policymakers can draw from Arthashastra's teachings to strengthen governance, ethical leadership, and social welfare — bridging ancient wisdom with contemporary challenges.</p>
+            
+            <h4>Bhagavad Gita: Life, Duty, and Inner Strength</h4>
+            <p>The Gita transcends religion and war: It teaches dharma — the importance of fulfilling one's role with dedication. It promotes detachment from outcomes, giving a psychological tool to manage stress and disappointment. The dialogue between Krishna and Arjuna demonstrates how to navigate moral crises, making it relevant to leaders, professionals, and anyone facing tough choices. The Gita's lessons foster resilience and clarity in today's complex, uncertainty-filled world, influencing leaders globally.</p>
+            
+            <h4>Vedas and Upanishads: Spiritual Science and Philosophy</h4>
+            <p>These texts laid the groundwork for Indian spirituality and philosophy: The cosmological speculations of the Rigveda still inspire scientific curiosity. The Upanishads' reflections on consciousness inform modern psychology and metaphysics. Their ethical framework based on truth, non-violence, and duty remain moral cornerstones.</p>
+            
+            <h4>Ramayana and Mahabharata: Culture and Ethics</h4>
+            <p>These epics shape Indian culture, community values, and ethics: Through stories of ideal conduct, loyalty, sacrifice, and justice, they provide moral references for social behavior. Their influence extends into arts, dance, theater, and literature.</p>
+
+            <div class="did-you-know">
+                <h3>Literary Legacy</h3>
+                <p>Ancient Indian literature is not just history; it is a living repository of knowledge that continues to guide governance, spirituality, ethics, and cultural identity. The Swadeshi movement's emphasis on self-reliance and indigenous culture finds its roots in these texts, which remain as relevant and inspiring today as centuries ago.</p>
+            </div>
+
+            <h3>Conclusion</h3>
+            <p>Ancient Indian literature is not just history; it is a living repository of knowledge that continues to guide governance, spirituality, ethics, and cultural identity. The Swadeshi movement's emphasis on self-reliance and indigenous culture finds its roots in these texts, which remain as relevant and inspiring today as centuries ago. Their teachings on leadership, duty, and cosmic harmony offer timeless wisdom for personal and societal growth.</p>
+        </section>
+
+        <!-- Astronomy Section -->
+        <section id="astronomy" class="section">
+            <h2>Astronomy - India's Ancient Gaze Far Ahead of Its Time</h2>
+            <p>Ancient Indian astronomy, exemplified by texts like the Surya Siddhanta and Aryabhatiya, remains a profound and relevant scientific heritage that continues to impact modern astronomy, mathematics, and timekeeping.</p>
+            
+            <div class="image-gallery">
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/736x/7c/2d/d7/7c2dd752e446e420ff7d29ca90e3d8d0.jpg')">
+    <img src="https://i.pinimg.com/736x/7c/2d/d7/7c2dd752e446e420ff7d29ca90e3d8d0.jpg" alt="Ancient astronomical instruments">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/736x/6d/70/96/6d7096d5e6dc914f72938f4ea59daeb2.jpg')">
+    <img src="https://i.pinimg.com/736x/6d/70/96/6d7096d5e6dc914f72938f4ea59daeb2.jpg" alt="Ancient Indian observatory">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/1200x/62/20/75/6220756b6a184cdacf983ee41f484bc8.jpg')">
+    <img src="https://i.pinimg.com/1200x/62/20/75/6220756b6a184cdacf983ee41f484bc8.jpg" alt="Astronomical calculations">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/736x/56/9e/b0/569eb0072bd3e7feefbed15d89f461a4.jpg')">
+    <img src="https://i.pinimg.com/736x/56/9e/b0/569eb0072bd3e7feefbed15d89f461a4.jpg" alt="Ancient cosmic understanding">
+  </div>
+</div>
+
+            
+            <h3>Foundational Texts and Their Features</h3>
+            
+            <h4>Vedanga Jyotisha (c. 1200–500 BCE)</h4>
+            <p>One of the earliest Indian astronomical texts focused on practical aspects like lunar and solar calendars, timings of rituals, solstices, and eclipses. It guided sacred sacrifices with precise astronomical timings, linking observation and religion.</p>
+            
+            <h4>Surya Siddhanta (4th–5th Century CE)</h4>
+            <p>A classical masterpiece, it advanced descriptions of planetary motions, eclipses, and cosmology. This text introduced trigonometric functions and explained the sidereal year—the earth's revolution relative to fixed stars—not just the solar year, marking a leap in astronomical accuracy.</p>
+            
+            <h4>Aryabhatiya by Aryabhata (499 CE)</h4>
+            <p>Aryabhata revolutionized astronomy by positing the rotation of the earth on its axis to explain day and night—a shocking departure from earlier geocentric views. His sine tables and planetary calculations laid the groundwork for modern trigonometry, and his precise calculation of the year as 365.358 days was remarkably close to modern values.</p>
+            
+            <h4>Brahmasphutasiddhanta by Brahmagupta (598–668 CE)</h4>
+            <p>Brahmagupta's work included sophisticated lunar and solar eclipse calculations, rules on zero, and time reckoning, helping establish zero as an integral part of astronomical computation.</p>
+            
+            <h4>Bhaskara II (12th Century)</h4>
+            <p>His Siddhanta Shiromani comprehensively covered planetary positions, eclipses, and calendar science. His work continued advancing astronomy and mathematical techniques.</p>
+
+            <h3>Major Contributions and Their Significance</h3>
+            
+            <h4>Heliocentric Ideas</h4>
+            <p>Long before Copernicus or Galileo, Indian astronomers like Aryabhata proposed Earth's rotation causing the day-night cycle. Further texts acknowledged the sun as a fixed star, a remarkable insight into the solar system's structure preserved in Indian works like the Aitareya Brahmana and Vishnu Purana.</p>
+            
+            <h4>Advanced Planetary Models &amp; Eclipse Predictions</h4>
+            <p>Ancient Indian astronomers accurately modeled elliptical orbits and calculated eclipses centuries in advance. Instruments and observational methods were highly sophisticated, allowing precise tracking.</p>
+            
+            <h4>Mathematical Innovations</h4>
+            <p>Indian scholars developed early trigonometry, sine tables, and decimal notation including zero, essential for astronomical computations. Madhava of Sangamagrama (14th century) pioneered infinite series mathematics critical for π calculations and precursors to calculus.</p>
+            
+            <h4>Timekeeping and Calendars</h4>
+            <p>The division of the day into hours, minutes, and seconds, lunar-solar calendar adjustments like intercalary months, and the use of Nakshatras (27 lunar mansions) for time measurement were crucial for rituals, agriculture, and navigation.</p>
+            
+            <h4>Observatories and Instruments</h4>
+            <p>Though Jantar Mantar was built much later (18th century), it followed the same spirit of empirical observation and calculation rooted in ancient astronomy. Instruments like gnomons and armillary spheres were used historically.</p>
+
+            <h3>Pioneering Astronomers</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Astronomer</th>
+                        <th>Period</th>
+                        <th>Major Contributions</th>
+                        <th>Legacy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Aryabhata</strong></td>
+                        <td>476-550 CE</td>
+                        <td>Earth's rotation, sine tables, 365.358 days calculation</td>
+                        <td>First satellite named after him</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brahmagupta</strong></td>
+                        <td>628-668 CE</td>
+                        <td>Zero in mathematics, eclipse calculations</td>
+                        <td>Foundation of modern mathematics</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Varahamihira</strong></td>
+                        <td>505-587 CE</td>
+                        <td>Comprehensive astronomical encyclopedia</td>
+                        <td>Influenced Islamic astronomy</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bhaskara II</strong></td>
+                        <td>1114-1185 CE</td>
+                        <td>Siddhanta Shiromani, advanced calculus concepts</td>
+                        <td>Precursor to calculus by 500 years</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Shocking &amp; Proud Facts</h3>
+            <ul class="custom-list">
+                <li>Aryabhata calculated Earth's circumference to 24,835 miles—astonishingly close to modern measurements</li>
+                <li>Ancient texts referred to countless suns in the cosmos, showing early knowledge of stars beyond our solar system</li>
+                <li>The Rigveda's acknowledgment that the sun does not set but is stationary, indicating heliocentric thinking millennia before western scientists</li>
+                <li>Indian astronomy influenced not only Asia but the Islamic world, through scholars like Al-Biruni who studied Indian texts extensively</li>
+                <li>The precision of eclipse predictions in texts such as the Surya Siddhanta was scientifically unmatched in the ancient world</li>
+            </ul>
+
+            <div class="did-you-know">
+                <h3>Still Relevant Today</h3>
+                <p>Indian astronomy offers foundational knowledge that influences: Eclipse predictions remain based on geometrical and mathematical principles laid down in these ancient works. The Indian lunar-solar calendar is used widely for religious festivals and agriculture. Early trigonometric methods underpin modern astronomy and navigation. The concept of zero, introduced into computation here, is fundamental to all scientific calculations.</p>
+            </div>
+
+            <h3>Conclusion</h3>
+            <p>Ancient Indian astronomy is a shining beacon of scientific and mathematical genius. The combination of observational precision, mathematical rigor, and philosophical outlook on time and cosmos makes these texts not just historical artifacts but living documents influencing modern science. The proud legacy of Indian astronomers like Aryabhata, Brahmagupta, Varahamihira, and Bhaskara II reminds us that India was a center of scientific excellence thousands of years ago, with discoveries that resonate in today's scientific world. This knowledge fosters pride and inspiration, showing that many modern scientific ideas have roots in India's ancient, rich intellectual tradition.</p>
+        </section>
+
+        <!-- Music Section -->
+        <section id="music" class="section">
+            <h2>Ancient Indian Music - Timeless Heritage and Contemporary Relevance</h2>
+            <p>Ancient Indian music, with origins deeply rooted in the Vedic era over 6,000 years ago, remains one of the world's most sophisticated and influential musical traditions. It is built upon fundamental concepts such as Nada (primordial sound), Shruti (microtones), Saptak (seven notes), Raga (melodic framework), Tala (rhythmic cycles), and Rasa (emotional essence), which continue to shape the soul of both Hindustani and Carnatic classical music.</p>
+            
+           <div class="image-gallery">
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/736x/75/c8/8d/75c88d602a7ba30872956170562a3b1c.jpg')">
+    <img src="https://i.pinimg.com/736x/75/c8/8d/75c88d602a7ba30872956170562a3b1c.jpg" alt="Traditional Indian musical instruments">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/736x/0e/2c/1b/0e2c1b9b4d8fec6a029d61f0b489fab7.jpg')">
+    <img src="https://i.pinimg.com/736x/0e/2c/1b/0e2c1b9b4d8fec6a029d61f0b489fab7.jpg" alt="Classical Indian music performance">
+  </div>
+</div>
+
+
+            <h3>Core Concepts and Their Enduring Importance</h3>
+            
+            <p><strong>Nada:</strong> Considered the cosmic sound underlying all music and creation, Nada connects music to spirituality and meditation. The use of chanting and sound therapy flows directly from this principle, influencing wellbeing practices worldwide.</p>
+            
+            <p><strong>Shruti:</strong> Dividing notes into as many as 22 microtones, Shruti provides unparalleled precision and subtlety in Indian classical music. This microtonal system enables intricate melodic expressions that are rare in other traditions.</p>
+            
+            <p><strong>Saptak:</strong> The seven foundational notes — Sa, Re, Ga, Ma, Pa, Dha, Ni — form the musical backbone, much like the scales in Western music. These notes have been preserved immaculately in centuries of tradition.</p>
+            
+            <p><strong>Raga and Tala:</strong> Ragas are not just scales but frameworks that evoke specific moods and emotions, allowing improvisation within tradition. Talas govern rhythm cycles, creating complex time signatures that support both devotional and entertainment music.</p>
+            
+            <p><strong>Rasa:</strong> This concept elevates music to an emotional and spiritual experience, guiding musicians and composers to communicate feelings that resonate deeply with listeners.</p>
+
+            <h3>Fundamental Concepts</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Meaning</th>
+                        <th>Significance</th>
+                        <th>Modern Application</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Nada</strong></td>
+                        <td>Primordial sound, cosmic vibration</td>
+                        <td>Foundation of sound therapy and meditation</td>
+                        <td>Used in modern music therapy</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Shruti</strong></td>
+                        <td>22 microtones that divide the octave</td>
+                        <td>Unparalleled melodic precision</td>
+                        <td>Advanced pitch systems</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Saptak</strong></td>
+                        <td>Seven basic notes: Sa Re Ga Ma Pa Dha Ni</td>
+                        <td>Foundation of all melodic structures</td>
+                        <td>Basis for scale systems worldwide</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Raga</strong></td>
+                        <td>Melodic framework with emotional essence</td>
+                        <td>Evokes particular emotions and moods</td>
+                        <td>Influences film scores and fusion music</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tala</strong></td>
+                        <td>Rhythmic cycles and time measures</td>
+                        <td>Mathematical precision in rhythm</td>
+                        <td>Complex rhythmic structures in modern compositions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rasa</strong></td>
+                        <td>Emotional essence and aesthetic flavor</td>
+                        <td>Connects music to human psychology</td>
+                        <td>Emotional design in contemporary music</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Seven Notes (Saptak) with Western Equivalents</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Indian Note</th>
+                        <th>Western Equivalent</th>
+                        <th>Symbolic Meaning</th>
+                        <th>Associated Deity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sa (Shadaj)</strong></td>
+                        <td>Do (C)</td>
+                        <td>Foundation, stability</td>
+                        <td>Ganesha</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Re (Rishabh)</strong></td>
+                        <td>Re (D)</td>
+                        <td>Energy, passion</td>
+                        <td>Agni (Fire)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ga (Gandhar)</strong></td>
+                        <td>Mi (E)</td>
+                        <td>Joy, bliss</td>
+                        <td>Saraswati</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ma (Madhyam)</strong></td>
+                        <td>Fa (F)</td>
+                        <td>Balance, knowledge</td>
+                        <td>Brahma</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pa (Pancham)</strong></td>
+                        <td>Sol (G)</td>
+                        <td>Devotion, calling</td>
+                        <td>Narada</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dha (Dhaivat)</strong></td>
+                        <td>La (A)</td>
+                        <td>Compassion, grace</td>
+                        <td>Ganga</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ni (Nishad)</strong></td>
+                        <td>Ti (B)</td>
+                        <td>Completion, return</td>
+                        <td>Surya (Sun)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Shocking and Proud Facts</h3>
+            <ul class="custom-list">
+                <li>The Samaveda, an ancient Vedic scripture (~1500 BCE), is considered the earliest musical text, combining Rigveda hymns into melodic chants that laid the groundwork for ragas</li>
+                <li>Ancient Indian music used 22 Shrutis (microtones) per octave long before Western music standardized 12 semitones, enabling highly nuanced melodic structures</li>
+                <li>The Natya Shastra by Bharata, dating back over 2,000 years, systematically documented music, dance, drama, emotion, and instruments — a cultural encyclopedia that's foundational even today</li>
+                <li>Indian classical music differentiates between Gandharva (formal, celestial music) and Gana (informal, entertainment music), highlighting the deep cultural layers of its practice</li>
+                <li>Instruments such as the Veena, Bansuri, Mridangam, and Tabla have ancient origins and remain critical to performances worldwide</li>
+            </ul>
+            
+            <h3>Spiritual and Cultural Relevance</h3>
+            <p>Music was not merely entertainment; it was integral to spiritual practice and ritual. Nada and ragas were believed to influence consciousness and emotional states, aiding meditation and healing. Classical dance forms like Bharatanatyam and Kathak are inseparable from musical principles. Even today, specific ragas are used in music therapy to relieve stress and balance the mind.</p>
+            
+            <h3>Advantages and Contemporary Impact</h3>
+            <ul class="custom-list">
+                <li><strong>Precision and Innovation:</strong> The concept of Shruti provides a level of pitch precision unmatched globally, supporting rich improvisation and emotional depth</li>
+                <li><strong>Emotional Depth:</strong> Raga and Rasa allow music to touch listeners profoundly, guiding performers in emotional storytelling</li>
+                <li><strong>Cultural Continuity:</strong> These ancient principles support hundreds of years of unbroken tradition, preserving Indian cultural identity</li>
+                <li><strong>Global Influence:</strong> Indian classical music has influenced Central Asian, Persian, and Southeast Asian music, enriching world heritage</li>
+                <li><strong>Therapeutic Uses:</strong> Ancient music theories are now being applied in modern music therapy and mindfulness practices</li>
+                <li><strong>Foundations for Modern Music Systems:</strong> The structured rhythmic cycles (Tala) and melodic frameworks (Raga) influence contemporary compositions, from film scores to fusion genres</li>
+            </ul>
+
+            <div class="did-you-know">
+                <h3>Lasting Relevance</h3>
+                <p>Ancient Indian music remains a vibrant, evolving art form rooted in millennia-old science and spirituality. It bridges the intangible — the cosmic Nada and emotive Rasa — with rigorous mathematical rhythm and pitch systems. Musicians today continue to learn from treatises like the Natya Shastra and Sangita Ratnakara, maintaining traditions while innovating globally.</p>
+            </div>
+
+            <h3>Conclusion</h3>
+            <p>The blend of science, emotion, and spirituality in Indian music exemplifies how a culture can fuse art and intellect to create a living, breathing heritage that educates, heals, and inspires. The fact that many of these concepts predate similar discoveries elsewhere—such as microtonal scales and complex rhythmic structures—fills one with pride about India's profound contribution to world culture.</p>
+        </section>
+
+        <!-- Dance Section -->
+        <section id="dance" class="section">
+            <h2>Ancient Indian Dance - The Divine Language of Movement</h2>
+            <p>Ancient Indian dance holds a unique place as a divine and spiritual art form that connects the earthly with the cosmic. Rooted deeply in Indian philosophy and spirituality, dance is not merely performance but a sacred language of the soul. The cosmic dance of Lord Shiva as Nataraja symbolizes the eternal cycle of creation, preservation, and destruction, linking dance to the universal rhythm of life.</p>
+            
+            <p>The authoritative text on Indian dance, the Natya Shastra by Bharata Muni (c. 200 BCE – 200 CE), is considered the fifth Veda and serves as the foundation for all classical Indian dance forms. This extensive treatise defines body movements, facial expressions (abhinaya), hand gestures (mudras), rhythms (tala), and emotions (rasa and bhava), presenting dance as a synthesis of drama, music, and movement. Bharata's concept of Rasa identifies the emotional flavors that dancers evoke in their audience, like love, heroism, compassion, and peace.</p>
+            
+            <div class="image-gallery">
+  <div class="gallery-item" onclick="openLightbox('https://natya-shastra.in/wp-content/uploads/2024/02/Blog-1.1.png')">
+    <img src="https://natya-shastra.in/wp-content/uploads/2024/02/Blog-1.1.png" alt="Natya Shastra illustration">
+  </div>
+  <div class="gallery-item" onclick="openLightbox('https://i.pinimg.com/736x/e2/5e/31/e25e3103d34abe414d94ec1278bc70eb.jpg')">
+    <img src="https://i.pinimg.com/736x/e2/5e/31/e25e3103d34abe414d94ec1278bc70eb.jpg" alt="Classical Indian dance performance">
+  </div>
+</div>
+
+            
+            <h3>Tandava and Lasya - The Cosmic Dances</h3>
+            <p><strong>Tandava</strong> is the vigorous dance of Shiva, symbolizing cosmic cycles, while <strong>Lasya</strong>, associated with Goddess Parvati, emphasizes grace and devotion. These two forms represent the dynamic contrasts of Indian dance: powerful energy and gentle beauty.</p>
+            
+            <p>Other ancient texts, like Abhinaya Darpana by Nandikeshvara, provide detailed expositions on gestures, expressions, and posture, continuing the tradition of codifying and refining dance techniques.</p>
+            
+            <p>Classical dance forms, such as Bharatanatyam (Tamil Nadu), Kathak (North India), Odissi (Odisha), Kathakali (Kerala), Kuchipudi (Andhra Pradesh), Manipuri (Manipur), and Sattriya (Assam), evolved from these ancient principles. Each form carries its unique style but shares the common foundation of Natya Shastra's aesthetics and spiritual ethos.</p>
+            
+            <p>Musical instruments essential to dance include mridangam, tabla, bansuri (flute), veena, and ghanta (bells), which intertwine rhythm and melody with expressive movement.</p>
+
+            <h3>Classical Dance Forms by Region</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Dance Form</th>
+                        <th>Region</th>
+                        <th>Key Characteristics</th>
+                        <th>Spiritual Focus</th>
+                        <th>Unique Elements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bharatanatyam</strong></td>
+                        <td>Tamil Nadu</td>
+                        <td>Precise geometry, expressive eyes</td>
+                        <td>Devotion and spiritual surrender</td>
+                        <td>Sharp, angular movements</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kathak</strong></td>
+                        <td>North India</td>
+                        <td>Storytelling through spins and expressions</td>
+                        <td>Divine love and cosmic stories</td>
+                        <td>Fast pirouettes (chakkars)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Odissi</strong></td>
+                        <td>Odisha</td>
+                        <td>Fluid movements, sculpturesque poses</td>
+                        <td>Lord Jagannath's divine dance</td>
+                        <td>Tribhanga (three-bend) posture</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kathakali</strong></td>
+                        <td>Kerala</td>
+                        <td>Dramatic expressions, elaborate costumes</td>
+                        <td>Good vs evil, dharma triumph</td>
+                        <td>Elaborate makeup and face painting</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kuchipudi</strong></td>
+                        <td>Andhra Pradesh</td>
+                        <td>Graceful movements, theatrical elements</td>
+                        <td>Bhakti and divine grace</td>
+                        <td>Dance drama combinations</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Manipuri</strong></td>
+                        <td>Manipur</td>
+                        <td>Gentle, swaying movements</td>
+                        <td>Radha-Krishna's eternal love</td>
+                        <td>Ras Lila performances</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sattriya</strong></td>
+                        <td>Assam</td>
+                        <td>Devotional, monastery traditions</td>
+                        <td>Vaishnavite philosophy</td>
+                        <td>Monastery (Sattra) origins</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Relevance and Advantages Today</h3>
+            
+            <h4>Spiritual Connection</h4>
+            <p>Ancient Indian dance remains a devotional practice, connecting performers and audiences to divine forces. Temple dances express stories of gods, serving as acts of worship and spiritual education.</p>
+            
+            <h4>Cultural Preservation</h4>
+            <p>Classical dances keep alive India's rich mythology and history through vivid storytelling. Epics like the Ramayana and Mahabharata come alive through expressive gestures and movements.</p>
+            
+            <h4>Emotional Expression and Communication</h4>
+            <p>Through rasa and bhava, dance conveys complex emotions with nuance, making it an emotional and artistic experience that transcends language.</p>
+            
+            <h4>Therapeutic Benefits</h4>
+            <p>Dance aids mental and physical health. Rhythmic movements improve coordination, reduce stress, and promote mindfulness — a holistic approach valued in modern therapy.</p>
+            
+            <h4>Global Influence</h4>
+            <p>Indian classical dance greatly influenced dance forms in Southeast Asia—such as Cambodia's Apsara dance and Balinese dance—reflecting its expansive cultural reach.</p>
+            
+            <h4>Educational Value</h4>
+            <p>Beyond entertainment, dance serves as a visual and experiential medium to teach values, history, and philosophy, making complex stories accessible across generations.</p>
+            
+            <h3>Shocking and Proud Facts</h3>
+            <ul class="custom-list">
+                <li>The Natya Shastra, often called the "Fifth Veda," predates many Greek treatises on drama and dance, showing India's ancient cultural sophistication</li>
+                <li>Lord Shiva's cosmic dance as Nataraja encapsulates profound metaphysical principles, symbolizing the cycle of life and the cosmic balance of energy—creation and destruction unified</li>
+                <li>The intricate hand gestures (mudras) are so detailed that they act like a language, capable of telling complex stories, emotions, and even philosophical concepts without speech</li>
+                <li>Ancient temple carvings depict dancers in poses identical to those taught and performed today, emphasizing a nearly 2000-year-old continuous tradition</li>
+                <li>Bharata Muni's detailed guidelines helped standardize dance and drama, influencing Indian aesthetics and even early theatrical traditions worldwide</li>
+            </ul>
+
+            <div class="did-you-know">
+                <h3>The Sacred Art</h3>
+                <p>The cosmic vision embodied in Lord Shiva's dance connects us to universal rhythms — a reminder that dance transcends art, entering the realm of the sacred and eternal. The Natya Shastra's influence on world theater and dance is immeasurable!</p>
+            </div>
+
+            <h3>Summary</h3>
+            <p>Ancient Indian dance is a holistic art form that combines rhythm, music, emotion, and spirituality to create a profound cultural and spiritual experience. The principles from Natya Shastra such as Tandava, Lasya, Rasa, Bhava and Mudras continue to govern classical dance and influence global art forms. Its spiritual roots, combined with expressive storytelling and intricate technique, make it not only a cultural treasure but a living tradition that continues to educate, inspire, heal, and connect people.</p>
+            
+            <p>The cosmic vision embodied in Lord Shiva's dance connects us to universal rhythms — a reminder that dance transcends art, entering the realm of the sacred and eternal.</p>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="section">
+            <div class="quiz-container">
+                <h2 class="quiz-title">Test Your Knowledge</h2>
+                <p class="quiz-subtitle">Challenge yourself with questions from India's ancient wisdom</p>
+                
+                <!-- Progress -->
+                <div class="quiz-progress">
+                    <p id="question-counter" class="counter-text">Question 1 of 6</p>
+                    <div class="progress-bar-bg">
+                        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+                
+                <!-- Quiz Content -->
+                <div id="quiz-content" class="quiz-content">
+                    
+                    <!-- Q1: Ayurveda -->
+                    <div id="q1" class="question-card active">
+                        <span class="topic-tag">Ayurveda</span>
+                        <h3 class="question">Which three elements govern your body in Ayurveda?</h3>
+                        <div class="answers">
+                            <button class="answer-option" onclick="checkAnswer(1, &#39;A&#39;, &#39;B&#39;)" fdprocessedid="d7l18o">A) Sun, Moon, Stars</button>
+                            <button class="answer-option" onclick="checkAnswer(1, &#39;B&#39;, &#39;B&#39;)" fdprocessedid="afqy0c">B) Vata, Pitta, Kapha</button>
+                            <button class="answer-option" onclick="checkAnswer(1, &#39;C&#39;, &#39;B&#39;)" fdprocessedid="51tmy">C) Mind, Body, Soul</button>
+                            <button class="answer-option" onclick="checkAnswer(1, &#39;D&#39;, &#39;B&#39;)" fdprocessedid="gltdl">D) Earth, Fire, Water</button>
+                        </div>
+                        <div id="feedback1" class="feedback"></div>
+                    </div>
+                    
+                    <!-- Q2: Architecture -->
+                    <div id="q2" class="question-card">
+                        <span class="topic-tag">Architecture</span>
+                        <h3 class="question">Which temple was carved from a single massive rock?</h3>
+                        <div class="answers">
+                            <button class="answer-option" onclick="checkAnswer(2, &#39;A&#39;, &#39;C&#39;)">A) Golden Temple</button>
+                            <button class="answer-option" onclick="checkAnswer(2, &#39;B&#39;, &#39;C&#39;)">B) Minakshi Temple</button>
+                            <button class="answer-option" onclick="checkAnswer(2, &#39;C&#39;, &#39;C&#39;)">C) Kailash Temple</button>
+                            <button class="answer-option" onclick="checkAnswer(2, &#39;D&#39;, &#39;C&#39;)">D) Lotus Temple</button>
+                        </div>
+                        <div id="feedback2" class="feedback"></div>
+                    </div>
+                    
+                    <!-- Q3: Literature -->
+                    <div id="q3" class="question-card">
+                        <span class="topic-tag">Literature</span>
+                        <h3 class="question">Which ancient text taught politics 1500 years before Machiavelli?</h3>
+                        <div class="answers">
+                            <button class="answer-option" onclick="checkAnswer(3, &#39;A&#39;, &#39;B&#39;)">A) Ramayana</button>
+                            <button class="answer-option" onclick="checkAnswer(3, &#39;B&#39;, &#39;B&#39;)">B) Arthashastra</button>
+                            <button class="answer-option" onclick="checkAnswer(3, &#39;C&#39;, &#39;B&#39;)">C) Mahabharata</button>
+                            <button class="answer-option" onclick="checkAnswer(3, &#39;D&#39;, &#39;B&#39;)">D) Vedas</button>
+                        </div>
+                        <div id="feedback3" class="feedback"></div>
+                    </div>
+                    
+                    <!-- Q4: Astronomy -->
+                    <div id="q4" class="question-card">
+                        <span class="topic-tag">Astronomy</span>
+                        <h3 class="question">Who calculated Earth's size with amazing accuracy 1500 years ago?</h3>
+                        <div class="answers">
+                            <button class="answer-option" onclick="checkAnswer(4, &#39;A&#39;, &#39;A&#39;)">A) Aryabhata</button>
+                            <button class="answer-option" onclick="checkAnswer(4, &#39;B&#39;, &#39;A&#39;)">B) Brahmagupta</button>
+                            <button class="answer-option" onclick="checkAnswer(4, &#39;C&#39;, &#39;A&#39;)">C) Copernicus</button>
+                            <button class="answer-option" onclick="checkAnswer(4, &#39;D&#39;, &#39;A&#39;)">D) Varahamihira </button>
+                        </div>
+                        <div id="feedback4" class="feedback"></div>
+                    </div>
+                    
+                    <!-- Q5: Music -->
+                    <div id="q5" class="question-card">
+                        <span class="topic-tag">Music</span>
+                        <h3 class="question">How many micro-notes (Shrutis) are in Indian classical music?</h3>
+                        <div class="answers">
+                            <button class="answer-option" onclick="checkAnswer(5, &#39;A&#39;, &#39;C&#39;)">A) 7</button>
+                            <button class="answer-option" onclick="checkAnswer(5, &#39;B&#39;, &#39;C&#39;)">B) 12</button>
+                            <button class="answer-option" onclick="checkAnswer(5, &#39;C&#39;, &#39;C&#39;)">C) 22</button>
+                            <button class="answer-option" onclick="checkAnswer(5, &#39;D&#39;, &#39;C&#39;)">D) 50</button>
+                        </div>
+                        <div id="feedback5" class="feedback"></div>
+                    </div>
+                    
+                    <!-- Q6: Dance -->
+                    <div id="q6" class="question-card">
+                        <span class="topic-tag">Dance</span>
+                        <h3 class="question">What is the Natya Shastra also known as?</h3>
+                        <div class="answers">
+                            <button class="answer-option" onclick="checkAnswer(6, &#39;A&#39;, &#39;B&#39;)">A) Dance Bible</button>
+                            <button class="answer-option" onclick="checkAnswer(6, &#39;B&#39;, &#39;B&#39;)">B) Fifth Veda</button>
+                            <button class="answer-option" onclick="checkAnswer(6, &#39;C&#39;, &#39;B&#39;)">C) Movement Manual</button>
+                            <button class="answer-option" onclick="checkAnswer(6, &#39;D&#39;, &#39;B&#39;)">D) Sacred Script</button>
+                        </div>
+                        <div id="feedback6" class="feedback"></div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Next Button -->
+                <button id="next-button" class="next-button" onclick="nextQuestion()" style="display:none;">
+                    Next Question →
+                </button>
+                
+                <!-- Results Screen -->
+                <div id="results" class="results-screen" style="display:none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <p class="score-text">Your Score: <span id="final-score">0/6</span></p>
+                    <p id="performance-message" class="performance-msg"></p>
+                    <button onclick="location.reload()" class="retry-button">Retake Quiz</button>
+                </div>
+                
+            </div>
+        </section>
+
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Connect with SanskritiSetu</h2>
+            <p>Join us in our mission to bridge ancient wisdom with modern innovation. Whether you're a researcher, student, practitioner, or simply someone interested in India's rich heritage, we'd love to hear from you.</p>
+            
+            <div class="contact-form" id="contactForm">
+                <form onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <input type="text" id="name" required="" placeholder=" " fdprocessedid="isx2jj">
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required="" placeholder=" " fdprocessedid="8cdulc">
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="6" required="" placeholder=" "></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn-submit" fdprocessedid="fnnkvn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="thank-you" id="thankYou">
+                <h3>🙏 Thank You!</h3>
+                <p>Your message has been received. We'll get back to you soon with insights from our ancient wisdom traditions!</p>
+                <p><em>"Vasudhaiva Kutumbakam" - The world is one family</em></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p>Email: Info.sanskritisetu@gmail.com</p>
+                <p>Bridging ancient wisdom with modern innovation</p>
+            </div>
+            <div class="footer-section">
+                <h3>Join Our Mission</h3>
+                <p>Be part of the movement to preserve and promote India's ancient knowledge systems for the benefit of humanity.</p>
+
+            </div>
+            <div class="footer-section">
+                <h3>Our Team</h3>
+                <ul class="custom-list">
+                    <li>Rudra Anaspure</li>
+                    <li>Shravan Mohite</li>
+                    <li>Vedant Suryavanshi</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Supported By</h3>
+                <p>Atal Innovation Mission</p>
+                <p>NITI Aayog</p>
+                <p>Government of India</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 SanskritiSetu. All rights reserved. | Embracing Swadeshi Spirit for a Better Tomorrow</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">×</span>
+        <img id="lightboxImg" src="file:///C:/Users/diiya/OneDrive/Desktop/MAIN%20PROJECT/index.html" alt="">
+    </div>
+
+    <script>
+        // Loading Screen - PERFECT TIMING
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loader = document.getElementById('loading-screen');
+                loader.style.opacity = '0';
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                }, 800);
+            }, 2500);
+        });
+
+        // Create Particles
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 3 + 's';
+                particles.appendChild(particle);
+            }
+        }
+
+        // Scroll Animations
+        function animateOnScroll() {
+            const sections = document.querySelectorAll('.section');
+            const windowHeight = window.innerHeight;
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < windowHeight * 0.8) {
+                    section.classList.add('animate');
+                }
+            });
+        }
+
+        // Scroll to Top Button
+        function toggleScrollButton() {
+            const scrollButton = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Lightbox Functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            lightboxImg.src = imageSrc;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Contact Form
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Simple validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                // Hide form and show thank you message
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('thankYou').style.display = 'block';
+                
+                // Scroll to thank you message
+                document.getElementById('thankYou').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            }
+        }
+
+        // Event Listeners
+        window.addEventListener('scroll', () => {
+            animateOnScroll();
+            toggleScrollButton();
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // SIMPLE QUIZ FUNCTIONALITY - FIXED VERSION
+        let currentQuestion = 1;
+        let score = 0;
+        const totalQuestions = 6;
+
+        const explanations = {
+            1: "In Ayurveda, Vata (air), Pitta (fire), and Kapha (earth) are the three doshas that control all body functions. Keeping them balanced is the key to good health!",
+            2: "The Kailash Temple at Ellora is mind-blowing! Ancient architects carved it top-to-bottom from one giant rock. It took 100+ years and shows incredible engineering genius!",
+            3: "Chanakya's Arthashastra (300 BCE) is an ancient masterpiece on governance, strategy, and economics—way ahead of its time and still relevant for modern leaders!",
+            4: "Aryabhata calculated Earth's circumference as 24,835 miles—almost exactly right! He also figured out Earth rotates on its axis, centuries before Western scientists.",
+            5: "Indian music uses 22 Shrutis (microtones) per octave, compared to Western music's 12 notes. This gives ragas their unique emotional depth and subtle expressions!",
+            6: "The Natya Shastra is called the 'Fifth Veda' because it's THE complete guide to Indian performing arts—covering dance, music, drama, and emotions with incredible detail!"
+        };
+
+        function checkAnswer(questionNum, selected, correct) {
+            // Get all answer buttons for this question
+            const questionCard = document.getElementById('q' + questionNum);
+            const buttons = questionCard.querySelectorAll('.answer-option');
+            
+            // Disable all buttons
+            buttons.forEach(btn => btn.disabled = true);
+            
+            // Mark correct and incorrect answers
+            buttons.forEach(btn => {
+                const btnLetter = btn.textContent.trim()[0];
+                if (btnLetter === correct) {
+                    btn.classList.add('correct');
+                    btn.innerHTML += ' ✓';
+                }
+                if (btnLetter === selected && selected !== correct) {
+                    btn.classList.add('incorrect');
+                    btn.innerHTML += ' ✗';
+                }
+            });
+            
+            // Update score
+            if (selected === correct) {
+                score++;
+            }
+            
+            // Show explanation
+            const feedback = document.getElementById('feedback' + questionNum);
+            feedback.innerHTML = '<strong>Explanation:</strong> ' + explanations[questionNum];
+            feedback.style.display = 'block';
+            
+            // Show next button
+            const nextBtn = document.getElementById('next-button');
+            if (questionNum < totalQuestions) {
+                nextBtn.style.display = 'block';
+            } else {
+                // Last question - show results after delay
+                setTimeout(showResults, 1500);
+            }
+        }
+
+        function nextQuestion() {
+            // Hide current question
+            document.getElementById('q' + currentQuestion).classList.remove('active');
+            
+            // Move to next
+            currentQuestion++;
+            
+            // Show next question
+            document.getElementById('q' + currentQuestion).classList.add('active');
+            
+            // Update progress
+            document.getElementById('question-counter').textContent = `Question ${currentQuestion} of ${totalQuestions}`;
+            document.getElementById('progress-bar-fill').style.width = (currentQuestion / totalQuestions * 100) + '%';
+            
+            // Hide next button
+            document.getElementById('next-button').style.display = 'none';
+        }
+
+        function showResults() {
+            // Hide quiz content
+            document.getElementById('quiz-content').style.display = 'none';
+            document.getElementById('next-button').style.display = 'none';
+            document.querySelector('.quiz-progress').style.display = 'none';
+            
+            // Show results
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('final-score').textContent = score + '/' + totalQuestions;
+            
+            // Performance message
+            let message = '';
+            if (score === 6) message = '🏆 Perfect! You are a heritage expert!';
+            else if (score >= 4) message = '🌟 Great job! You know your Indian heritage well!';
+            else if (score >= 2) message = '📚 Good try! Keep exploring to learn more!';
+            else message = '💪 Keep learning! Every expert was once a beginner!';
+            
+            document.getElementById('performance-message').textContent = message;
+        }
+
+
+
+        // Add animations
+        const animationStyle = document.createElement('style');
+        animationStyle.textContent = `
+            @keyframes confetti-fall {
+                to {
+                    transform: translateY(100vh) rotate(720deg);
+                }
+            }
+            
+            @keyframes quiz-correct {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(74, 222, 128, 0.6); }
+            }
+            
+            @keyframes quiz-incorrect {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+            
+            @keyframes draw-line {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+            
+            @keyframes bar-grow {
+                from {
+                    height: 0;
+                }
+            }
+        `;
+        document.head.appendChild(animationStyle);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            animateOnScroll();
+        });
+    </script>
+
+<span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span><span id="PING_CONTENT_DLS_POPUP" style="display: none;"></span><div style="background-color: transparent; border: none; bottom: 15px; display: block; margin: 0px; opacity: 1; padding: 0px; position: fixed; right: 15px; z-index: 2147483647;"><template shadowrootmode="closed"><style>/*!
+
+@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Thin.ttf") format("truetype");font-weight:100;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ThinItalic.ttf") format("truetype");font-weight:100;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ExtraLight.ttf") format("truetype");font-weight:200;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ExtraLightItalic.ttf") format("truetype");font-weight:200;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Light.ttf") format("truetype");font-weight:300;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-LightItalic.ttf") format("truetype");font-weight:300;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Regular.ttf") format("truetype");font-weight:400;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Italic.ttf") format("truetype");font-weight:400;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Medium.ttf") format("truetype");font-weight:500;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-MediumItalic.ttf") format("truetype");font-weight:500;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-SemiBold.ttf") format("truetype");font-weight:600;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-SemiBoldItalic.ttf") format("truetype");font-weight:600;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Bold.ttf") format("truetype");font-weight:700;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ExtraBold.ttf") format("truetype");font-weight:800;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ExtraBoldItalic.ttf") format("truetype");font-weight:800;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Black.ttf") format("truetype");font-weight:900;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-BlackItalic.ttf") format("truetype");font-weight:900;font-style:italic}*{border:0;box-sizing:border-box;font:inherit;font-family:"McAfeePoppins",Helvetica,Arial;font-size:100%;margin:0;padding:0;vertical-align:baseline;outline:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html,body{background-color:#f5f6fa;font-family:"McAfeePoppins",Helvetica,Arial;line-height:1;height:100%;width:100%}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}b{font-weight:bold}img{display:block}.dls__container{align-items:center;display:flex;margin:0 auto;margin-top:50px;position:relative}.dls__popup__expanded{align-items:center;overflow:hidden;border-radius:100px;cursor:pointer;display:flex;left:0;padding:15px;position:absolute;height:95px;width:383px;background-color:#fff;transition:all .3s ease-in-out}.dls__popup__expanded .dls__icon{height:65px;width:73px}.content{margin-left:12px}.content .content__images{display:flex;align-items:center;width:250px}.content .content__images .seperator__line{margin-left:5px;margin-right:10px}.content .content__images #dls_close_icon{cursor:pointer;margin-left:auto;margin-right:0px}.content p{font-family:"McAfeePoppins",Helvetica,Arial;font-weight:"400";font-size:14px;line-height:20px;margin-top:8px;color:#4258ff;width:250px;cursor:pointer}.shield{overflow:hidden;box-shadow:0px 2px 4px 0px rgba(33,41,52,.12),0px -1px 2px 0px rgba(0,0,0,.08);align-items:center;border-radius:100px;bottom:0;display:flex;height:95px;justify-content:center;position:absolute;right:0;width:383px;transition:all .3s ease-in-out}.shield__circle{display:flex;justify-content:center;align-items:center;width:55px;height:55px;background-color:#c01818;transition:all .6s ease-in-out .2s;z-index:1;opacity:0}
+
+/*# sourceMappingURL=../sourceMap/chrome/css/download_scan_popup.css.map*/</style><div class="dls__container">
+  <div class="shield" style="background: transparent; opacity: 0.1; display: none;">
+    <div class="shield__circle" style="opacity: 1;">
+      <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/mcafee_logo_white.svg?secret=gpksia" x-mcsrc="" id="dls_ballon_icon" x-mcsrcparsed="true">
+    </div>
+    <div class="dls__popup__expanded" style="opacity: 0;">
+      <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/download_scan_icon.svg?secret=gpksia" x-mcsrc="" class="dls__icon" x-mcsrcparsed="true">
+      <div class="content">
+        <div class="content__images">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/mcafee_logo_red.svg?secret=gpksia" x-mcsrc="" id="dls_mcafee_logo" x-mcsrcparsed="true">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/seperator_line.svg?secret=gpksia" x-mcsrc="" class="seperator__line" x-mcsrcparsed="true">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/webadvisor.svg?secret=gpksia" x-mcsrc="" x-mcsrcparsed="true">
+          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/close-outline.svg?secret=gpksia" x-mcsrc="" id="dls_close_icon" x-mcsrcparsed="true">
+        </div>
+        <p id="download_scan_popup_expanded_descriptions">Your download's being scanned. We'll let you know if there's an issue.</p>
+      </div>
+    </div>
+  </div>
+</div><style>/*!
+
+ */
+.mc-interactive-balloon{position:absolute;right:-50px;bottom:8px;box-shadow:rgba(0,0,0,.12) 0px 0px 10px;height:40px;width:40px;background:#1671ee;border-radius:20px;display:flex;justify-content:center;align-items:center}
+
+/*# sourceMappingURL=../sourceMap/chrome/css/interactive_balloon.css.map*/</style></template></div></body></html>
